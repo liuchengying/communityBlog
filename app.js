@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var config = require('./config');
 var User = require('./module_method').User;
-
+var authUser = require('./middlewares/authentication').authUser;
 
 var webRouter = require('./routes/web-router');
 var apiRouter = require('./routes/restapi-router');
@@ -32,37 +32,10 @@ app.use(session({
   saveUninitialized: false,
   resave: false,
 }))
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(function (req, res, next) {
-//   if(req.session){
-//     console.log(req.session);
-//   }else{
-//     console.log('aaaa','111111111');
-//   }
-//   next();
-// })
-
-app.use(function(req, res, next) {
-  if(!req.signedCookies[config.auth_cookie_name]){
-    next();
-  }else{
-    var auth_token = req.signedCookies[config.auth_cookie_name];
-    console.log(auth_token)
-    if(!auth_token){ next() };
-    var auth = auth_token.split('####');
-    var user_id = auth[0];
-    User.getUserById(user_id, (err, user) => {
-      if(err) {
-        return next(err);
-      }
-      res.locals.current_user = req.session.user = user;
-      console.log(user);
-      next();
-    })
-
-  }
-})
+app.use(authUser);
 
 app.use('/', webRouter);
 app.use('/api/v1/', apiRouter);
