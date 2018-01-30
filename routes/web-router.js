@@ -12,6 +12,7 @@ router.get('/', home);
 router.get('/login', login.login);
 router.get('/reg', register.reg);
 router.get('/active_account', register.activeAccount);
+router.get('/loginout',login.login_out);
 
 router.post('/signup', register.registerUser);
 router.post('/signin', login.login_in);

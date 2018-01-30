@@ -6,12 +6,12 @@ var config = require('../config');
 var auth =require('../middlewares/authentication');
 
 const login = function (req, res, next) {
-  res.render('login', {
-    title: '登录--微小博'
-  });
+  
+  res.render('login', {title: '登录--微小博'});
 }
 
 const login_in = function (req, res, next) {
+  
   var loginname = req.body.loginname;
   var password = req.body.psd;
   var ep = new eventProxy();
@@ -55,13 +55,18 @@ const login_in = function (req, res, next) {
     }
     if (user.username == loginname && user.password == password) {
       auth.set_session(user, res);
-      res.render('home', {loginname: user.username, title:'主页-欢迎来到微小博',show_block_top:true});
+      res.redirect('/');
     }
 
   })
 }
-
+const login_out = function (req, res, next) {
+  req.session.destroy();
+  res.clearCookie(config.auth_cookie_name, {path: '/'});
+  res.redirect('/');
+}
 module.exports = {
   login,
-  login_in
+  login_in,
+  login_out
 };

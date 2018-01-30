@@ -5,8 +5,8 @@
     <h2>
       欢迎来到 微 小 博！
     </h2>
+    <% if (!(typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined' || typeof user !== 'undefined')) { %>
   
-  <% if(typeof(show_block_top) == 'undefined') { %>
     <br>
     <p>
       <strong style="font-size: 3rem">狂飙的蜗牛</strong> ---- 用速度放大梦想

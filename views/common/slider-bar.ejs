@@ -7,9 +7,9 @@
       </div>
       <div class="panel-body">
         <img style="width: 56px; height:56px;display:inline-block" src="/images/default.jpg" class="img-rounded img-responsive" />
-        <% if(typeof(loginname) !== 'undefined' ) { %>
+        <% if(typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined') { %>
         <h4 style="display:inline-block">
-          <%= loginname %>
+          <%= current_user.username %>
         </h4>
         <% } else { %>
           <p style="display:inline-block">
