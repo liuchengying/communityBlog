@@ -1,0 +1,46 @@
+<div class="col-md-3 column">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          个人信息
+        </h3>
+      </div>
+      <div class="panel-body">
+        <img style="width: 56px; height:56px;display:inline-block" src="/images/default.jpg" class="img-rounded img-responsive" />
+        <% if(typeof(loginname) !== 'undefined' ) { %>
+        <h4 style="display:inline-block">
+          <%= loginname %>
+        </h4>
+        <% } else { %>
+          <p style="display:inline-block">
+            <a href="/login">请登录</a>
+          </p>
+        <% } %>
+        <br>
+        <br>
+        <p>
+          这家伙很懒，什么也没有留下。。。
+        </p>
+        <p>
+          <a class="btn btn-primary" href="#">发表文章 »</a>
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          Panel title
+        </h3>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+      <div class="panel-footer">
+        Panel content
+      </div>
+
+    </div>
+  </div>

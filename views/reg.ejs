@@ -1,0 +1,68 @@
+<%- include('./common/hearder.ejs') %>
+  <% if ( typeof (error) !== 'undefined' && error )  { %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <span>
+        注册失败!
+      </span>
+      <strong><%= error %></strong> 
+    </div>
+  <% } %>
+  <% if ( typeof(success) !== 'undefined' && success )  { %>
+    <div class="alert alert-dismissable alert-success">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <span>
+        注册成功!
+      </span>
+      <strong><%= success %></strong>
+      <a href="/login">登 录</a>
+    </div>
+   <% } else { %>
+          <div class="jumbotron">
+            <h2 class="col-sm-offset-1">
+              欢迎注册 微 小 博！
+            </h2>
+            <br>
+            <form class="form-horizontal" role="form" action="/signup" method="post">
+              <div class="form-group">
+                <label for="inputEmail3" class="col-sm-1 control-label">账 号</label>
+                <div class="col-sm-4">
+                  <% if (typeof(loginname) !== 'undefined') { %>
+                    <input type="text" class="form-control" id="loginname" name="loginname" value="<%= loginname %>" />
+                    <% } else { %>
+                      <input type="text" class="form-control" id="loginname" name="loginname" value="" />
+                      <% } %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-1 control-label">密 码</label>
+                <div class="col-sm-4">
+                  <input type="password" class="form-control" id="psd" name="psd" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-1 control-label">重复密码</label>
+                <div class="col-sm-4">
+                  <input type="password" class="form-control" id="repepass" name="repepass"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputPassword3" class="col-sm-1 control-label">邮 箱</label>
+                <div class="col-sm-4">
+                  <% if (typeof(email) !== 'undefined') { %>
+                    <input type="email" class="form-control" id="email" name="email" value="<%= email %>" />
+                    <% } else { %>
+                      <input type="email" class="form-control" id="email" name="email" value="" />
+                      <% } %>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-1 col-sm-10">
+                  <button type="submit" class="btn btn-primary"> 注 册</button>
+                  <a class="btn btn-default" href="/login">已有账号,直接登录</a>
+                </div>
+              </div>
+            </form>
+          </div>
+  <% } %>
+          <%- include('./common/footer.ejs') %>
