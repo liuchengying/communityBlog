@@ -1,5 +1,7 @@
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
+var time_module = require('./time_module');
 
 var Topic_Schema = new Schema({
 	title: { type: String },
@@ -21,5 +23,8 @@ var Topic_Schema = new Schema({
 });
 
 Topic_Schema.index({ author_id: 1, create_at: -1 });
+Topic_Schema.plugin(time_module);
+
+
 
 mongoose.model('Topic', Topic_Schema);

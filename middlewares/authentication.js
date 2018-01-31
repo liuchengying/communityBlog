@@ -32,9 +32,16 @@ const authUser = function (req, res, next) {
     })
   }
 }
-
+// 检测用户是否登录（用在部分功能跳转）
+const checkUserIsLogin = function (req, res, next) {
+  if(!req.session || !req.session.user || !req.session.user._id){
+    return res.status(403).send('forbidden!');
+  }
+  next();
+}
 
 module.exports = {
   set_session,
-  authUser
+  authUser,
+  checkUserIsLogin
 }

@@ -6,6 +6,12 @@ var config = require('../config');
 var auth =require('../middlewares/authentication');
 
 const login = function (req, res, next) {
+  console.log(1)
+  if(req.session && req.session.user){
+    console.log(2)
+    res.render('notify/notify',{error:'您已经登录，将自动跳转到主页',title:'微小博-狂飙的蜗牛'});
+    return;
+  }
   
   res.render('login', {title: '登录--微小博'});
 }

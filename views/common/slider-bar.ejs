@@ -1,46 +1,61 @@
 <div class="col-md-3 column">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          个人信息
-        </h3>
-      </div>
-      <div class="panel-body">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        个人信息
+      </h3>
+    </div>
+    <div class="panel-body">
+      <% if(typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined') { %>
         <img style="width: 56px; height:56px;display:inline-block" src="/images/default.jpg" class="img-rounded img-responsive" />
-        <% if(typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined') { %>
+
         <h4 style="display:inline-block">
           <%= current_user.username %>
         </h4>
         <% } else { %>
           <p style="display:inline-block">
-            <a href="/login">请登录</a>
+            <span>请</span>
+            <a href="/login">登录</a>
+            <span>或者</span>
+            <a href="/reg">注册</a>
+            <span>，您还可以通过以下方式登录</span>
+            <div>
+              <a href="/" class="btn btn-primary">通过github登录</a>
+            </div>
+
           </p>
-        <% } %>
-        <br>
-        <br>
-        <p>
-          这家伙很懒，什么也没有留下。。。
-        </p>
-        <p>
-          <a class="btn btn-primary" href="#">发表文章 »</a>
-        </p>
-      </div>
+          <% } %>
 
+            <% if(typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined') { %>
+              <br>
+              <br>
+              <p>
+                <%= current_user.signature %>
+              </p>
+              <% } %>
+                <% if((typeof show_btn === 'undefined' || show_btn) && (typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined'))  { %>
+                  <p>
+                    <a class="btn btn-primary" href="/addtopic">发表文章 »</a>
+                  </p>
+
+                  <% } %>
     </div>
 
-
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          Panel title
-        </h3>
-      </div>
-      <div class="panel-body">
-        Panel content
-      </div>
-      <div class="panel-footer">
-        Panel content
-      </div>
-
-    </div>
   </div>
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        Panel title
+      </h3>
+    </div>
+    <div class="panel-body">
+      Panel content
+    </div>
+    <div class="panel-footer">
+      Panel content
+    </div>
+
+  </div>
+</div>

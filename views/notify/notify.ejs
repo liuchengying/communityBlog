@@ -1,4 +1,5 @@
 <%- include('../common/hearder.ejs')%>
+
 <div id='content'>
   <div class='panel'>
     <div class='header'>
@@ -11,11 +12,13 @@
       <% if(typeof(error) !== 'undefined' && error){ %>
       <div class="alert alert-error">
         <strong><%= error %></strong>
+        
       </div>
       <% } %>
       <% if(typeof(success) !== 'undefined' && success){ %>
       <div class="alert alert-success">
         <strong><%= success %><a href="/login">登 录</a></strong>
+        
       </div>
       <% } %>
 
