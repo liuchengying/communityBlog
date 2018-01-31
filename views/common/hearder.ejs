@@ -13,7 +13,7 @@
 <body>
   <div class="container">
     <div class="row clearfix">
-      <div class="col-md-12 column">
+      <div >
 
         <nav class="navbar navbar-default navbar-inverse " role="navigation">
           <div class="navbar-header">
@@ -49,13 +49,12 @@
                 <a href="/">
                   关于</a>
               </li>
-              <li>
-                <a href="/reg">
-                  <span class="glyphicon glyphicon-user"></span> 注册</a>
-              </li>
               <% if (!(typeof current_user !== 'undefined' && typeof current_user.username !== 'undefined' || typeof user !== 'undefined')) { %>
 
-
+                <li>
+                    <a href="/reg">
+                      <span class="glyphicon glyphicon-user"></span> 注册</a>
+                  </li>
                 <li>
                   <a href="/login">
                     <span class="glyphicon glyphicon-log-in"></span> 登录</a>
