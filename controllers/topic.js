@@ -4,7 +4,12 @@ var express = require('express');
 var router = express.Router();
 var User = require('../module_method').User;
 var Topic = require('../module_method').Topic;
+
 const index = function (req, res, next) {
+  res.render('topic/readArtical', {title:'查看文章'});
+}
+
+const addTopic = function (req, res, next) {
   res.render('topic/addArtical', {
     title: '发表文章'
   });

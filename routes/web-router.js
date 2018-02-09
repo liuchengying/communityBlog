@@ -17,5 +17,6 @@ router.get('/loginout',login.login_out);
 router.post('/signup', register.registerUser);
 router.post('/signin', login.login_in);
 
-router.get('/addtopic', auth.checkUserIsLogin, topic.index);
+router.get('/addtopic', auth.checkUserIsLogin, topic.addTopic);
 router.post('/topic/create', auth.checkUserIsLogin, topic.newTopic);
+router.get('/topic/:tid', topic.index);

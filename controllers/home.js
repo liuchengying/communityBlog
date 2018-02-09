@@ -15,7 +15,7 @@ const home = function (req, res, next) {
   ep.all('topics', (topics) => {
     res.render('home', {
       title: '主页-欢迎来到微小博',
-      topic: topics
+      topic: topics.reverse()
     });
   })
 
