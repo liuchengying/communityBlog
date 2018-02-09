@@ -21,7 +21,7 @@
                 <div class="dropdown" style="display:inline-block;margin-left:10px;">
                   <button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" style="min-width:100px;text-align:center">
                     <span id='select-text'>
-                      <input id="bankuai_txt" type="hidden" name="bankuai" />
+                      <input id="bankuai_txt" type="hidden" name="bankuai" value=""/>
                       <span class="aaa">选择板块</span>
                     </span>
                     <span class="caret"></span>
@@ -92,10 +92,10 @@
         });
 
         $('#create_topic_form').on('submit', function (e) {
-          var tabValue = $('#select-text').text();
-          if (tabValue == '选择板块') {
+          var tabValue = $('#bankuai_txt').val();
+          if (!tabValue) {
             alert('必须选择一个版块！');
-
+            console.log('asdfasdfasdf')
             $('.tab-selecter').css('color', 'red');
             return false;
           }
