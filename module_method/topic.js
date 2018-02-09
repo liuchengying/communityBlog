@@ -12,11 +12,16 @@ const addNewTopic = function (title, content, tab, authorId, callback) {
 	topic.save(callback);
 }
 
-const getAllTopic = function (text,callback) {
-	Topic.find({ }, callback);
+const getAllTopic = function (text, callback) {
+	Topic.find({}, callback);
+}
+
+const getTopicById = function (id, callback) {
+	Topic.findById(id, callback);
 }
 
 module.exports = {
 	addNewTopic,
-	getAllTopic
+	getAllTopic,
+	getTopicById
 }

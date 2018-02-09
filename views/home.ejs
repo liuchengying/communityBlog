@@ -24,7 +24,6 @@
                   <div class="col-md-2 col-sm-2 col-xs-2 column" style="text-align:right;padding-top:5px;">
                     <img src="/images/default.jpg" class="img-thumbnail img-responsive" style="width:90px; min-width:52px;" />
                   </div>
-<<<<<<< HEAD
                   <div class="col-md-10 col-sm-10 col-xs-10 column" style="padding-right:8px;">
                     <div class="col-md-9 col-sm-9 col-xs-9 column" style="padding-left:5px;padding-right:0;">
                       <p style="font-size: 2rem">
@@ -36,7 +35,7 @@
                         <%= item.content.slice(0,40) %>
                       </p>
                       <p>
-                        <a class="btn btn-primary btn-xs hidden-xs" href="/topic/2131asd13213asd">点击查看 »</a>
+                        <a class="btn btn-primary btn-xs hidden-xs" href='/topic/<%= item._id %>' >点击查看 »</a>
                         <span style="display:inline-block;margin-left:10px;" class="text-right hidden-xs ">
                           <span>阅读量: </span>
                           <span>
@@ -59,23 +58,6 @@
                     <div class="col-md-3 col-sm-3 col-xs-3 column" style="text-align:right;display:inline-block;margin-top:20px;padding: 0; ">
                       <span style="font-size:1rem;vertical-align:middle">
                         <%= item.create_at_time() %>
-=======
-                  <div class="col-md-10 column">
-                    <p style="font-size: 2rem">
-                      <strong>
-                        <%= item.title %>
-                      </strong>
-                    </p>
-                    <p style="font-size:1.65rem">
-                      <%= item.content %>
-                    </p>
-                    <p style="position: reletive">
-                      <a class="btn btn-primary btn-xs" href="#">点击查看 »</a>
-                      <span style="display:inline-block;position: absolute;right:50;font-size:1.1rem;line-height:22px;padding-top:5px;" class="text-right">
-                          <span>阅读量: </span><span><%= item.visit_count %></span><span style="display:inline-block;border:3px solid grey;border-radius:50%;line-height:20px;margin-left:5px;margin-right:5px;margin-bottom:2px;"></span>
-                          <span>收藏量: </span><span><%= item.collect_cout %></span><span style="display:inline-block;border:3px solid grey;border-radius:50%;line-height:20px;margin-left:5px;margin-right:5px;margin-bottom:2px;"></span>
-                          <span>发表时间: </span><span><%= item.create_at_time() %></span>
->>>>>>> 14ee1e572cd69624ae4c90c6473a88dc4e28ae1b
                       </span>
                     </div>
                   </div>
