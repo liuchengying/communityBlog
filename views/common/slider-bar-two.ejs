@@ -1,0 +1,41 @@
+<div class="col-md-3 col-xs-12 " style="padding:0 15px;">
+
+  <div class="slider-bar-div" >
+    <div class="slider-bar-title-div">
+      <p class="slider-bar-title">作者信息</p>
+    </div>  
+    <div class="slider-bar-content">
+      <a href="#" >
+        <img src="/images/user_icon.png" alt="用户头像" class="img-responsive img-thumbnail">
+      </a>
+      <a href="#" style="vertical-align:middle;margin-left:8px;font-size:1.5rem;"><%= data.author %></a>
+      <% if(typeof data.slogan == 'undefined' || !data.slogan) { %>
+      <p style="font-size:1.6rem;margin-top: 15px;"><em>这家伙很懒，什么也没有留下 ...</em></p>
+      <% } else { %>
+        <p style="font-size:1.6rem;margin-top: 15px;"><em><%= data.slogan %></em></p>
+      <% } %>
+    </div>
+  </div>
+
+  <div class="slider-bar-div" >
+    <div class="slider-bar-title-div">
+      <p class="slider-bar-title">作者最近的文章</p>
+    </div>
+    <div class="slider-bar-content">
+      <p>作者最近的文章</p>
+      <p>作者最近的文章</p>
+      <p>作者最近的文章</p>
+    </div>
+  </div>
+
+  <div class="slider-bar-div" >
+    <div class="slider-bar-title-div">
+      <p class="slider-bar-title">文章热度排名</p>
+    </div>
+    <div class="slider-bar-content">
+        <p>文章1</p>
+        <p>文章2</p>
+        <p>文章3</p>
+    </div>
+  </div>
+</div>

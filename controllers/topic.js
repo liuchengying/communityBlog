@@ -9,19 +9,23 @@ const index = function (req, res, next) {
   let id = req.params.tid;
   Topic.getTopicById(id, (err, doc) => {
     if(err) {
-      res.render('topic/readArtical',{title:'查看文章',error:'该文章不存在！', data:doc});
+      res.render('notify/notify',{title:'错误提示',error:'该文章不存在！'});
       return;
     }
     User.getUserById(doc.author_id, (err, user) => {
       if(err){
+        res.render('notify/notify',{title:'错误提示',error:'该文章不存在！'});
         return;
       }
+      doc.visit_count ++;
+      doc.save();
       doc.author = user.username;
+      doc.slogan = user.slogan || '';
+      
       res.render('topic/readArtical',{title:'查看文章', data:doc});
     })
     
   });
-  // res.render('topic/readArtical', {title:'查看文章'});
 }
 
 const addTopic = function (req, res, next) {
