@@ -48,4 +48,9 @@ a:hover {
   color: #95a5a6;
 }
 
+.CodeMirror, .CodeMirror-scroll {
+  min-height: 300px;
+  max-height:  400px;
+}
+
 

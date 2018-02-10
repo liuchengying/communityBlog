@@ -48,7 +48,7 @@
               </div>
 
               <div class="input-group col-md-12 column" style="margin-top:20px;">
-                <textarea type="text" name="new_topic_content" value='' class="form-control" rows="30" placeholder="文章支持 Markdown 语法, 请注意标记代码"></textarea>
+                <textarea type="text" name="new_topic_content" id="editor-add" class="form-control" rows="30" placeholder="文章支持 Markdown 语法, 请注意标记代码"></textarea>
                 <input type='submit' class="btn btn-primary" style="margin-top:20px;"></input>
               </div>
 
@@ -100,5 +100,13 @@
             return false;
           }
         });
+
+       var $el = $('#editor-add')[0]; 
+					var simplemde = new SimpleMDE({
+						element: $el,
+						autoDownloadFontAwesome: true,
+						autofocus:false,
+					});
+					simplemde.value("This text will appear in the editor");
       })();
     </script>
