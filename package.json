@@ -18,10 +18,12 @@
     "async": "^2.6.0",
     "eventproxy": "^1.0.0",
     "express-session": "^1.15.6",
+    "github-markdown-css": "^2.10.0",
     "markdown-it": "^8.4.0",
     "moment": "^2.20.1",
     "mongoose": "^5.0.1",
     "nodemailer": "^4.4.2",
-    "nodemailer-smtp-transport": "^2.7.4"
+    "nodemailer-smtp-transport": "^2.7.4",
+    "simplemde": "^1.11.2"
   }
 }

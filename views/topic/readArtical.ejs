@@ -63,14 +63,14 @@
 			<div style="background-color: white; margin-bottom:15px; padding:8px 15px;">
 				<h4><strong>评论</strong></h4>
 			</div>
-			<!-- 添加恢复 -->
+			<!-- 添加回复 -->
 			<div style="background-color: white; margin-bottom:15px;">
 					<div style="padding:8px 15px;border-bottom:1px solid #b2bec3">
 						<h4><strong>添加回复</strong></h4>
 					</div>
-					<div style="padding-bottom:15px;">
-						<form action="" method="POST" >
-							<textarea style="width:100%;" name="editor-txt" id="editor" rows="30"></textarea>
+					<div style="padding-bottom:15px;position:relative">
+						<form action="" method="POST" id="read-topic" >
+							<textarea style="width:100%;" name="editor-txt" id="editor" ></textarea>
 							<input type="submit" value="提交" class="btn btn-info" style="margin-left:15px;">
 						</form>
 					</div>
@@ -98,8 +98,7 @@
 					var simplemde = new SimpleMDE({
 						element: $el,
 						autoDownloadFontAwesome: true,
-						autofocus:false,
-						tabSize: 1,
+						autofocus:false
 					});
 					simplemde.value("This text will appear in the editor");
 				});

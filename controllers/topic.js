@@ -4,6 +4,7 @@ var express = require('express');
 var router = express.Router();
 var User = require('../module_method').User;
 var Topic = require('../module_method').Topic;
+var markdown = require('../common/md');
 
 const index = function (req, res, next) {
   let id = req.params.tid;
@@ -19,6 +20,7 @@ const index = function (req, res, next) {
       }
       doc.visit_count ++;
       doc.save();
+      doc.content = markdown.render(doc.content || '');
       doc.author = user.username;
       doc.slogan = user.slogan || '';
       
